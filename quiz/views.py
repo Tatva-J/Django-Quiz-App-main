@@ -12,6 +12,11 @@ def index_page(request):
     return render(request, "index.html")
 
 
+@login_required(login_url="/login/")
+def result_quiz(request):
+    return render(request, "result.html")
+
+
 # questions = Question.objects.filter(level=request.POST.get("level")).order_by("?")[
 #         : int(request.POST.get("max")) + 1
 #     ]

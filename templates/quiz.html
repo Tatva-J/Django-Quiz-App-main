@@ -79,7 +79,8 @@
           <input type="button" class="btn btn-danger" id="finish-btn" value="Finish">
           <!-- here -->
         </li>
-        <a href="#section2" class="btn btn-success show-result-btn ml-auto" id="show-result-btn">Show Results</a>
+        <a href="{% url 'result' %}" class="btn btn-success show-result-btn ml-auto" id="show-result-btn">Show
+          Results</a>
         {% comment %} <input type="button" name="" id="dummy" value="dummy button"> {% endcomment %}
       </ol>
       <br><br>
@@ -93,12 +94,13 @@
 </div>
 
 
-<div id="section2">
+
+<!-- <div id="section2">
   <div class="card text-white bg-secondary mb-3 quizresults">
     <div class="card-header">
       <h3>Results</h3>
-    </div>
-    <div class="card-body">
+    </div> -->
+<!-- <div class="card-body">
       <div class="container">
         <div class="row">
           <h6 class="card-title col-3">Quiz Category</h6>
@@ -107,15 +109,15 @@
           {% endfor %}
         </div>
       </div>
-      <hr>
+      <hr> -->
 
-      <div class="container mt-lg-5">
-        {% comment %} <div class="row">
+<!-- <div class="container mt-lg-5"> -->
+<!-- {% comment %} <div class="row">
           <div class="col-3">Total Score</div>
           <div class="col-8">#Total score</div>
         </div>
-        <hr> {% endcomment %}
-        <div class="row">
+        <hr> {% endcomment %} -->
+<!-- <div class="row">
           <div class="col-3">Start Time</div>
           <div class="col-8" id="displayStartTime">
             <input type="text" size="58" id="startTimeField" readonly="true">
@@ -126,19 +128,15 @@
           <div class="col-3">End Time</div>
           <div class="col-8" id="displayEndTime">
             <input type="text" size="58" id="endTimeField" readonly="true">
-          </div>
-        </div>
-        <hr>
-      </div>
-      </p>
-    </div>
-  </div>
-  <br><br><br><br><br><br>
-  <hr style="height:1px;color:gray;background-color:gray;">
-  <!-- <footer class="mr-lg-5 mt-3" style="float:right;">
-    <p>Submitted By : Arjun Mohan V P</p>
-    <p>GitHub : <a href="https://github.com/vparjunmohan/Django-Quiz-App"
-        target=_blank>github.com/vparjunmohan/Django-Quiz-App</a></p>
-  </footer> -->
+          </div> -->
+<!-- </div> -->
+<!-- <hr> -->
+</div>
+</p>
+</div>
+</div>
+<br><br><br><br><br><br>
+<hr style="height:1px;color:gray;background-color:gray;">
+
 </div>
 {% endblock content %}
