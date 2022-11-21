@@ -1,0 +1,5 @@
+1)coverage run manage.py test -v 2
+2)coverage html
+
+##sphinx commands
+1)sphinx-quickstart
