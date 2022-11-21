@@ -1,4 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4" id="result">Fluid jumbotron</h1>
+        <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+    </div>
+</div>
 <script type="text/javascript">
-    alert(localStorage.getItem('score1') || []);
-    localStorage.clear();
+
+    what();
+    function what() {
+        document.getElementById("result").innerHTML = "Your Score is:=>" + localStorage.getItem("score1");
+        localStorage.clear();
+    };
 </script>
+{% endblock content %}
