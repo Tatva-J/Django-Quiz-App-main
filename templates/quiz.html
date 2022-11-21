@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<style>
-  body {
-    background-image: url('/static/image/image2.png');
-  }
-</style>
+
 <div id="section1">
 
   <div class="container mt-5 pt-5">
@@ -14,8 +10,8 @@
       {% csrf_token %}
 
 
-      <strong>Q. {{question.question}}</strong>
-        <!-- <p style="color:red">Hint-1{{question.hint_one}}</p> -->
+      <p>Q. {{question.question}}
+      <p style="color:red">Hint-1{{question.hint_one}}</p>
 
       <div class="form-check">
         <input class="form-check-input" type="radio" name="option" id="option_one" value="{{question.option_one}}">
