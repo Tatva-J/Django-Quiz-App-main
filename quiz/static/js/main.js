@@ -86,6 +86,7 @@ if (checkBtn) {
           // }
           val = localStorage.getItem("score1") || 0;
           score123 = parseInt(val) + parseInt(points.value);
+          localStorage.setItem("total", parseInt(points.value) * parseInt(max.value));
           localStorage.setItem("score1", score123);
         }
 

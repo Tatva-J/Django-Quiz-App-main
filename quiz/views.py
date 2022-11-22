@@ -21,9 +21,31 @@ def result_quiz(request):
 #         : int(request.POST.get("max")) + 1
 #     ]
 
+import json
+
 
 @login_required(login_url="/login/")
 def before_quiz(request):
+    user_ip = request.META["REMOTE_ADDR"]
+    f = open("users.json")
+    data = json.load(f)
+    if data["users"][0][user_ip] == 3:
+        return HttpResponse("Sorry!No more attempts allowed")
+    dictionary = {
+        user_ip: 1,
+    }
+    with open("users.json", "r+") as file:
+        # First we load existing data into a dict.
+        file_data = json.load(file)
+        # Join new_data with file_data inside emp_details
+        for i in file_data["users"]:
+            if i.__contains__(user_ip):
+                file_data["users"][0][user_ip] = 1 + int(file_data["users"][0][user_ip])
+            # file_data["users"].append(dictionary)
+        # Sets file's current position at offset.
+        file.seek(0)
+        # convert back to json.
+        json.dump(file_data, file, indent=4)
     questions = Question.objects.filter(level=request.POST.get("level")).order_by("?")[
         : int(request.POST.get("max"))
     ]
@@ -73,6 +95,7 @@ def before_quiz(request):
 def take_quiz(request):
     #!Task1=Randomly picking max number of questions=finished
     # questions = Question.objects.filter(level="Easy")
+
     questions = Question.objects.filter(level=request.GET.get("level")).order_by("?")[
         : int(request.GET.get("max"))
     ]

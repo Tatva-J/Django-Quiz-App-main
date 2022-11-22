@@ -15,7 +15,7 @@
 
 
       <strong>Q. {{question.question}}</strong>
-        <!-- <p style="color:red">Hint-1{{question.hint_one}}</p> -->
+      <!-- <p style="color:red">Hint-1{{question.hint_one}}</p> -->
 
       <div class="form-check">
         <input class="form-check-input" type="radio" name="option" id="option_one" value="{{question.option_one}}">
@@ -48,6 +48,8 @@
       <input type="hidden" name="hint" id="hint11" value="{{question.hint_one}}">
       <input type="hidden" name="hint" id="hint22" value="{{question.hint_two}}">
       <input type="hidden" name="points" id="points" value="{{question.points}}">
+      <input type="hidden" name="max" id="max" value="{{max}}">
+
       <div>{% include 'messages.html' %}</div>
       <input class="btn btn-primary check-btn" type="submit" value="Check" id="check" onclick="displayRadioValue();" />
       <input class="btn btn-primary check-btn" type="button" value="Hint1" id="hint" onclick="displayHintValue();" />
@@ -88,7 +90,7 @@
         {% comment %} <input type="button" name="" id="dummy" value="dummy button"> {% endcomment %}
       </ol>
       <br><br>
-      Question {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+
       <!-- <input type="text" id="totalScore"> -->
     </div>
   </div>
@@ -99,48 +101,13 @@
 
 
 
-<!-- <div id="section2">
-  <div class="card text-white bg-secondary mb-3 quizresults">
-    <div class="card-header">
-      <h3>Results</h3>
-    </div> -->
-<!-- <div class="card-body">
-      <div class="container">
-        <div class="row">
-          <h6 class="card-title col-3">Quiz Category</h6>
-          {% for question in page_obj %}
-          <h6 class="card-title col-8">{{question.choice}} </h6>
-          {% endfor %}
-        </div>
-      </div>
-      <hr> -->
 
-<!-- <div class="container mt-lg-5"> -->
-<!-- {% comment %} <div class="row">
-          <div class="col-3">Total Score</div>
-          <div class="col-8">#Total score</div>
-        </div>
-        <hr> {% endcomment %} -->
-<!-- <div class="row">
-          <div class="col-3">Start Time</div>
-          <div class="col-8" id="displayStartTime">
-            <input type="text" size="58" id="startTimeField" readonly="true">
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-3">End Time</div>
-          <div class="col-8" id="displayEndTime">
-            <input type="text" size="58" id="endTimeField" readonly="true">
-          </div> -->
-<!-- </div> -->
-<!-- <hr> -->
 </div>
 </p>
 </div>
 </div>
 <br><br><br><br><br><br>
-<hr style="height:1px;color:gray;background-color:gray;">
-
+<center><span style="font-weight:bold;">Question {{page_obj.number}} of {{page_obj.paginator.num_pages}}</span>
+</center>
 </div>
 {% endblock content %}

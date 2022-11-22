@@ -86,6 +86,7 @@ class LoginView(View):
                 if user.is_active:
                     auth.login(request, user)
                     messages.success(request, f"Welcome, {user.username}")
+                    messages.success(request, "Your Quiz Should Start Soon...")
                     return redirect("index_page")
 
             messages.error(request, "Invalid credentials, try again")

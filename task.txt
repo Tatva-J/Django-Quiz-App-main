@@ -1,7 +1,9 @@
 Tasks:
-1)greeting the user who got over 90%
+1)greeting the user who got over 90%=>Done!!
+3)Your quiz may start soon.. page=>Done!!
+
+
 2)Brief Solution to the Answer, field to be added to db
-3)Your quiz may start soon.. page
 4)3 attempts Limit
 5)Handling different Error Cases
 6)Documentation completion
