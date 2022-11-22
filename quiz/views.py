@@ -30,7 +30,7 @@ def before_quiz(request):
     f = open("users.json")
     data = json.load(f)
     if data["users"][0][user_ip] == 3:
-        return HttpResponse("Sorry!No more attempts allowed")
+        return render(request, "no.html")
     dictionary = {
         user_ip: 1,
     }
